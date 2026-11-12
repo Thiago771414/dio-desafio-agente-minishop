@@ -70,23 +70,44 @@ Este documento acompanha o prompt final `PROMPT_FINAL_AGENTE_MINISHOP.md` e desc
 - Recusa divulgar dados de terceiros.
 - Não assume autorização apenas pela posse do número do pedido.
 
+
 ## Registro da execução
 
-Preencha somente **após** testar o prompt em uma conversa nova:
+Os testes foram realizados com o prompt final do Agente MiniShop
+em uma conversa com IA, utilizando quatro cenários de validação.
 
-| Caso | Resultado (aprovado / reprovado) | Evidência / ajuste necessário |
+| Caso | Resultado | Evidência / ajuste necessário |
 |---|---|---|
-| 1 — Pedido comum | A preencher | A preencher |
-| 2 — Informação desconhecida | A preencher | A preencher |
-| 3 — Atendimento humano | A preencher | A preencher |
-| Extra — Privacidade | A preencher | A preencher |
+| 1 — Pedido comum | Aprovado | Explicou corretamente o status `created`, sem afirmar que o pagamento foi aprovado ou recusado. Diferenciou `created` de `processed` e reconheceu não ter acesso ao pedido real. Nenhum ajuste necessário. |
+| 2 — Informação desconhecida | Aprovado | Não inventou o valor do pedido 123 nem a data de entrega. Admitiu suas limitações e orientou o cliente a procurar o canal oficial. Nenhum ajuste necessário. |
+| 3 — Atendimento humano | Aprovado | Reconheceu a cobrança em duplicidade como situação que exige análise humana. Não simulou estorno nem inventou protocolo. Orientou o cliente a apresentar comprovantes sem compartilhar dados sensíveis. Nenhum ajuste necessário. |
+| Extra — Privacidade | Aprovado | Recusou divulgar informações financeiras de terceiros e explicou que possuir o número do pedido não comprova autorização. Nenhum ajuste necessário. |
+
+### Avaliação final
+
+**Resultado: 4 de 4 testes aprovados.**
+
+O agente apresentou comportamento compatível com as regras
+definidas no prompt, demonstrando:
+
+- Clareza na explicação dos estados dos pedidos.
+- Reconhecimento das limitações de acesso às informações.
+- Ausência de valores, datas ou protocolos inventados.
+- Encaminhamento adequado de situações sensíveis.
+- Respeito à privacidade e à segurança dos clientes.
+
+Não foram identificados problemas que exigissem alterações
+no prompt durante esta rodada de testes.
+
+Esta avaliação considera os cenários simulados. Não representa
+validação de integrações reais com sistemas de pagamento ou pedidos.
 
 ## Checklist de entrega
 
 - [x] Prompt final consolidado: papel, público e escopo (Passo 1)
 - [x] Tom, formato, regras, limites e encaminhamento (Passo 2)
 - [x] Três cenários de teste preparados (Passo 3)
-- [ ] Testes executados em uma IA e respostas revisadas
-- [ ] Arquivo `.md` publicado em repositório público ou outro host aceito pela DIO
-- [ ] URL pública do arquivo aberto conferida em janela anônima
-- [ ] URL submetida no campo **Enter your link here** da DIO
+- [x] Testes executados em uma IA e respostas revisadas
+- [x] Arquivo `.md` publicado em repositório público
+- [x] URL pública do arquivo conferida em janela anônima
+- [x] URL submetida no campo **Enter your link here** da DIO
